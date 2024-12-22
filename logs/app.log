@@ -1,0 +1,605 @@
+2024-12-03 11:43:06 [main] INFO  org.apache.logging.log4j.Logger - 1 row(s) inserted successfully.
+2024-12-03 11:43:06 [main] INFO  org.apache.logging.log4j.Logger - 1 row(s) inserted successfully.
+2024-12-03 19:15:07 [main] ERROR org.apache.logging.log4j.Logger - Error do something: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:175) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682) ~[java.sql:?]
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230) ~[java.sql:?]
+	at connector.JDBCtest.connection(JDBCtest.java:20) ~[classes/:?]
+	at connector.JDBCtest.saveBicycle(JDBCtest.java:26) [classes/:?]
+	at connector.Main.main(Main.java:21) [classes/:?]
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:150) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:166) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:582) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.readServerCapabilities(NativeProtocol.java:537) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.beforeHandshake(NativeProtocol.java:424) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1428) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:134) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	... 8 more
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.cj.protocol.FullReadInputStream.readFully(FullReadInputStream.java:67) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeaderLocal(SimplePacketReader.java:81) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:63) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:45) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:576) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.readServerCapabilities(NativeProtocol.java:537) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.beforeHandshake(NativeProtocol.java:424) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1428) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:134) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	... 8 more
+2024-12-03 19:15:07 [main] ERROR org.apache.logging.log4j.Logger - Error do something: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:175) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682) ~[java.sql:?]
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230) ~[java.sql:?]
+	at connector.JDBCtest.connection(JDBCtest.java:20) ~[classes/:?]
+	at connector.JDBCtest.saveBicycle(JDBCtest.java:26) [classes/:?]
+	at connector.Main.main(Main.java:22) [classes/:?]
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:150) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:166) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:582) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.readServerCapabilities(NativeProtocol.java:537) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.beforeHandshake(NativeProtocol.java:424) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1428) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:134) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	... 8 more
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.cj.protocol.FullReadInputStream.readFully(FullReadInputStream.java:67) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeaderLocal(SimplePacketReader.java:81) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:63) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:45) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:576) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.readServerCapabilities(NativeProtocol.java:537) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.beforeHandshake(NativeProtocol.java:424) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1428) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:134) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	... 8 more
+2024-12-03 19:18:39 [main] ERROR org.apache.logging.log4j.Logger - Error do something: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:175) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682) ~[java.sql:?]
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230) ~[java.sql:?]
+	at connector.JDBCtest.connection(JDBCtest.java:20) ~[classes/:?]
+	at connector.JDBCtest.saveBicycle(JDBCtest.java:26) [classes/:?]
+	at connector.Main.main(Main.java:21) [classes/:?]
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:150) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:166) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:582) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.readServerCapabilities(NativeProtocol.java:537) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.beforeHandshake(NativeProtocol.java:424) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1428) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:134) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	... 8 more
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.cj.protocol.FullReadInputStream.readFully(FullReadInputStream.java:67) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeaderLocal(SimplePacketReader.java:81) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:63) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:45) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:576) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.readServerCapabilities(NativeProtocol.java:537) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.beforeHandshake(NativeProtocol.java:424) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1428) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:134) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	... 8 more
+2024-12-03 19:18:39 [main] ERROR org.apache.logging.log4j.Logger - Error do something: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:175) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682) ~[java.sql:?]
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230) ~[java.sql:?]
+	at connector.JDBCtest.connection(JDBCtest.java:20) ~[classes/:?]
+	at connector.JDBCtest.saveBicycle(JDBCtest.java:26) [classes/:?]
+	at connector.Main.main(Main.java:22) [classes/:?]
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:150) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:166) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:582) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.readServerCapabilities(NativeProtocol.java:537) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.beforeHandshake(NativeProtocol.java:424) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1428) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:134) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	... 8 more
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.cj.protocol.FullReadInputStream.readFully(FullReadInputStream.java:67) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeaderLocal(SimplePacketReader.java:81) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:63) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:45) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:576) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.readServerCapabilities(NativeProtocol.java:537) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.beforeHandshake(NativeProtocol.java:424) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1428) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:134) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	... 8 more
+2024-12-03 19:23:49 [main] ERROR org.apache.logging.log4j.Logger - Error do something: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:175) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682) ~[java.sql:?]
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230) ~[java.sql:?]
+	at connector.JDBCtest.connection(JDBCtest.java:20) ~[classes/:?]
+	at connector.JDBCtest.saveBicycle(JDBCtest.java:26) [classes/:?]
+	at connector.Main.main(Main.java:21) [classes/:?]
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:150) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:166) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:121) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	... 8 more
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method) ~[?:?]
+	at java.base/sun.nio.ch.Net.connect(Net.java:589) ~[?:?]
+	at java.base/sun.nio.ch.Net.connect(Net.java:578) ~[?:?]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:583) ~[?:?]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[?:?]
+	at java.base/java.net.Socket.connect(Socket.java:752) ~[?:?]
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:153) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:121) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	... 8 more
+2024-12-03 19:24:10 [main] ERROR org.apache.logging.log4j.Logger - Error do something: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:175) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682) ~[java.sql:?]
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230) ~[java.sql:?]
+	at connector.JDBCtest.connection(JDBCtest.java:20) ~[classes/:?]
+	at connector.JDBCtest.saveBicycle(JDBCtest.java:26) [classes/:?]
+	at connector.Main.main(Main.java:22) [classes/:?]
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:150) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:166) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:121) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	... 8 more
+Caused by: java.net.ConnectException: Connection timed out: connect
+	at java.base/sun.nio.ch.Net.connect0(Native Method) ~[?:?]
+	at java.base/sun.nio.ch.Net.connect(Net.java:589) ~[?:?]
+	at java.base/sun.nio.ch.Net.connect(Net.java:578) ~[?:?]
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:583) ~[?:?]
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:327) ~[?:?]
+	at java.base/java.net.Socket.connect(Socket.java:752) ~[?:?]
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:153) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:121) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	... 8 more
+2024-12-03 19:24:45 [main] ERROR org.apache.logging.log4j.Logger - Error do something: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:175) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682) ~[java.sql:?]
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230) ~[java.sql:?]
+	at connector.JDBCtest.connection(JDBCtest.java:20) ~[classes/:?]
+	at connector.JDBCtest.saveBicycle(JDBCtest.java:26) [classes/:?]
+	at connector.JDBCtest.main(JDBCtest.java:46) [classes/:?]
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:150) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:166) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:582) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.readServerCapabilities(NativeProtocol.java:537) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.beforeHandshake(NativeProtocol.java:424) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1428) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:134) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	... 8 more
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.cj.protocol.FullReadInputStream.readFully(FullReadInputStream.java:67) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeaderLocal(SimplePacketReader.java:81) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:63) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:45) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:576) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.readServerCapabilities(NativeProtocol.java:537) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.beforeHandshake(NativeProtocol.java:424) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1428) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:134) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	... 8 more
+2024-12-03 19:24:45 [main] ERROR org.apache.logging.log4j.Logger - Error do something: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:175) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682) ~[java.sql:?]
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230) ~[java.sql:?]
+	at connector.JDBCtest.connection(JDBCtest.java:20) ~[classes/:?]
+	at connector.JDBCtest.saveBicycle(JDBCtest.java:26) [classes/:?]
+	at connector.JDBCtest.main(JDBCtest.java:47) [classes/:?]
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:150) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:166) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:582) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.readServerCapabilities(NativeProtocol.java:537) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.beforeHandshake(NativeProtocol.java:424) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1428) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:134) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	... 8 more
+Caused by: java.io.EOFException: Can not read response from server. Expected to read 4 bytes, read 0 bytes before connection was unexpectedly lost.
+	at com.mysql.cj.protocol.FullReadInputStream.readFully(FullReadInputStream.java:67) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeaderLocal(SimplePacketReader.java:81) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:63) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.SimplePacketReader.readHeader(SimplePacketReader.java:45) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.readMessage(NativeProtocol.java:576) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.readServerCapabilities(NativeProtocol.java:537) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.beforeHandshake(NativeProtocol.java:424) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1428) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:134) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	... 8 more
+2024-12-03 19:29:01 [main] ERROR org.apache.logging.log4j.Logger - Error do something: Public Key Retrieval is not allowed
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:111) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682) ~[java.sql:?]
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230) ~[java.sql:?]
+	at connector.JDBCtest.connection(JDBCtest.java:20) ~[classes/:?]
+	at connector.JDBCtest.saveBicycle(JDBCtest.java:26) [classes/:?]
+	at connector.JDBCtest.main(JDBCtest.java:46) [classes/:?]
+Caused by: com.mysql.cj.exceptions.UnableToConnectException: Public Key Retrieval is not allowed
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:86) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:130) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:49) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.proceedHandshakeWithPluggableAuthentication(NativeAuthenticationProvider.java:443) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.connect(NativeAuthenticationProvider.java:213) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1430) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:134) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	... 8 more
+2024-12-03 19:29:01 [main] ERROR org.apache.logging.log4j.Logger - Error do something: Public Key Retrieval is not allowed
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:111) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682) ~[java.sql:?]
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230) ~[java.sql:?]
+	at connector.JDBCtest.connection(JDBCtest.java:20) ~[classes/:?]
+	at connector.JDBCtest.saveBicycle(JDBCtest.java:26) [classes/:?]
+	at connector.JDBCtest.main(JDBCtest.java:47) [classes/:?]
+Caused by: com.mysql.cj.exceptions.UnableToConnectException: Public Key Retrieval is not allowed
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:86) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:130) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:49) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.proceedHandshakeWithPluggableAuthentication(NativeAuthenticationProvider.java:443) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.connect(NativeAuthenticationProvider.java:213) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1430) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:134) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	... 8 more
+2024-12-03 19:29:52 [main] ERROR org.apache.logging.log4j.Logger - Error do something: Public Key Retrieval is not allowed
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:111) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682) ~[java.sql:?]
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230) ~[java.sql:?]
+	at connector.JDBCtest.connection(JDBCtest.java:20) ~[classes/:?]
+	at connector.JDBCtest.saveBicycle(JDBCtest.java:26) [classes/:?]
+	at connector.JDBCtest.main(JDBCtest.java:46) [classes/:?]
+Caused by: com.mysql.cj.exceptions.UnableToConnectException: Public Key Retrieval is not allowed
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:86) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:130) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:49) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.proceedHandshakeWithPluggableAuthentication(NativeAuthenticationProvider.java:443) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.connect(NativeAuthenticationProvider.java:213) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1430) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:134) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	... 8 more
+2024-12-03 19:29:52 [main] ERROR org.apache.logging.log4j.Logger - Error do something: Public Key Retrieval is not allowed
+java.sql.SQLNonTransientConnectionException: Public Key Retrieval is not allowed
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:111) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:825) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:446) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:239) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:188) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:682) ~[java.sql:?]
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:230) ~[java.sql:?]
+	at connector.JDBCtest.connection(JDBCtest.java:20) ~[classes/:?]
+	at connector.JDBCtest.saveBicycle(JDBCtest.java:26) [classes/:?]
+	at connector.JDBCtest.main(JDBCtest.java:47) [classes/:?]
+Caused by: com.mysql.cj.exceptions.UnableToConnectException: Public Key Retrieval is not allowed
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502) ~[?:?]
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486) ~[?:?]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:62) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:86) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:130) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.authentication.CachingSha2PasswordPlugin.nextAuthenticationStep(CachingSha2PasswordPlugin.java:49) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.proceedHandshakeWithPluggableAuthentication(NativeAuthenticationProvider.java:443) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeAuthenticationProvider.connect(NativeAuthenticationProvider.java:213) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.protocol.a.NativeProtocol.connect(NativeProtocol.java:1430) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:134) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:945) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:815) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	... 8 more
+2024-12-03 19:31:13 [main] INFO  org.apache.logging.log4j.Logger - 1 row(s) inserted successfully.
+2024-12-03 19:31:13 [main] INFO  org.apache.logging.log4j.Logger - 1 row(s) inserted successfully.
+2024-12-03 19:31:54 [main] ERROR org.apache.logging.log4j.Logger - Error do something: Duplicate entry '1' for key 'bicycles.PRIMARY'
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '1' for key 'bicycles.PRIMARY'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at connector.JDBCtest.saveBicycle(JDBCtest.java:33) [classes/:?]
+	at connector.JDBCtest.main(JDBCtest.java:46) [classes/:?]
+2024-12-03 19:31:54 [main] ERROR org.apache.logging.log4j.Logger - Error do something: Duplicate entry '2' for key 'bicycles.PRIMARY'
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '2' for key 'bicycles.PRIMARY'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at connector.JDBCtest.saveBicycle(JDBCtest.java:33) [classes/:?]
+	at connector.JDBCtest.main(JDBCtest.java:47) [classes/:?]
+2024-12-03 19:31:54 [main] INFO  org.apache.logging.log4j.Logger - 1 row(s) inserted successfully.
+2024-12-03 19:32:06 [main] ERROR org.apache.logging.log4j.Logger - Error do something: Duplicate entry '3' for key 'bicycles.PRIMARY'
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '3' for key 'bicycles.PRIMARY'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:118) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:916) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1061) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1009) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1320) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:994) ~[mysql-connector-j-8.0.33.jar:8.0.33]
+	at connector.JDBCtest.saveBicycle(JDBCtest.java:33) [classes/:?]
+	at connector.JDBCtest.main(JDBCtest.java:46) [classes/:?]
+2024-12-03 19:38:30 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: sergei]
+2024-12-03 19:38:30 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+2024-12-03 19:38:30 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-12-03 19:38:30 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2024-12-03 19:38:30 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/sergei]
+2024-12-03 19:38:30 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2024-12-03 19:38:30 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-12-03 19:38:30 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2024-12-03 19:38:31 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2024-12-03 19:38:31 [main] INFO  org.hibernate.tuple.PojoInstantiator - HHH000182: No default (no-argument) constructor for class: connector.Bicycle (class must be instantiated by Interceptor)
+2024-12-03 19:38:31 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4faf104] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-12-03 19:38:31 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-12-03 19:38:31 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 1062, SQLState: 23000
+2024-12-03 19:38:31 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - Duplicate entry '3' for key 'bicycles.PRIMARY'
+2024-12-03 19:38:31 [main] INFO  org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl - HHH000010: On release of batch it still contained JDBC statements
+2024-12-03 19:38:31 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/sergei]
+2024-12-03 19:39:38 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: sergei]
+2024-12-03 19:39:39 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+2024-12-03 19:39:39 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-12-03 19:39:39 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2024-12-03 19:39:39 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/sergei]
+2024-12-03 19:39:39 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2024-12-03 19:39:39 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-12-03 19:39:39 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2024-12-03 19:39:39 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2024-12-03 19:39:39 [main] INFO  org.hibernate.tuple.PojoInstantiator - HHH000182: No default (no-argument) constructor for class: connector.Bicycle (class must be instantiated by Interceptor)
+2024-12-03 19:39:40 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4faf104] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-12-03 19:39:40 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-12-03 19:39:40 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/sergei]
+2024-12-03 19:41:55 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: sergei]
+2024-12-03 19:41:55 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+2024-12-03 19:41:55 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-12-03 19:41:55 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2024-12-03 19:41:55 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/sergei]
+2024-12-03 19:41:55 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2024-12-03 19:41:55 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-12-03 19:41:55 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2024-12-03 19:41:56 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2024-12-03 19:41:56 [main] INFO  org.hibernate.tuple.PojoInstantiator - HHH000182: No default (no-argument) constructor for class: connector.Bicycle (class must be instantiated by Interceptor)
+2024-12-03 19:41:56 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4346808] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-12-03 19:41:56 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-12-03 19:41:56 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 1062, SQLState: 23000
+2024-12-03 19:41:56 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - Duplicate entry '5' for key 'bicycles.PRIMARY'
+2024-12-03 19:41:56 [main] INFO  org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl - HHH000010: On release of batch it still contained JDBC statements
+2024-12-03 19:41:56 [main] INFO  connector.Main -  log pishet
+2024-12-03 19:41:56 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/sergei]
+2024-12-03 19:42:39 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: sergei]
+2024-12-03 19:42:39 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+2024-12-03 19:42:40 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-12-03 19:42:40 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2024-12-03 19:42:40 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/sergei]
+2024-12-03 19:42:40 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2024-12-03 19:42:40 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-12-03 19:42:40 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2024-12-03 19:42:40 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2024-12-03 19:42:40 [main] INFO  org.hibernate.tuple.PojoInstantiator - HHH000182: No default (no-argument) constructor for class: connector.Bicycle (class must be instantiated by Interceptor)
+2024-12-03 19:42:40 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4346808] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-12-03 19:42:41 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-12-03 19:42:41 [main] INFO  connector.Main -  log pishet
+2024-12-03 19:42:41 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/sergei]
+2024-12-03 19:46:02 [main] INFO  org.hibernate.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: sergei]
+2024-12-03 19:46:02 [main] INFO  org.hibernate.Version - HHH000412: Hibernate ORM core version 5.6.14.Final
+2024-12-03 19:46:02 [main] INFO  org.hibernate.annotations.common.Version - HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2024-12-03 19:46:02 [main] WARN  org.hibernate.orm.connections.pooling - HHH10001002: Using Hibernate built-in connection pool (not for production use!)
+2024-12-03 19:46:02 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001005: using driver [com.mysql.cj.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/sergei]
+2024-12-03 19:46:02 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001001: Connection properties: {password=****, user=root}
+2024-12-03 19:46:02 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001003: Autocommit mode: false
+2024-12-03 19:46:02 [main] INFO  org.hibernate.engine.jdbc.connections.internal.DriverManagerConnectionProviderImpl - HHH000115: Hibernate connection pool size: 20 (min=1)
+2024-12-03 19:46:02 [main] INFO  org.hibernate.dialect.Dialect - HHH000400: Using dialect: org.hibernate.dialect.MySQL8Dialect
+2024-12-03 19:46:03 [main] INFO  org.hibernate.tuple.PojoInstantiator - HHH000182: No default (no-argument) constructor for class: connector.Bicycle (class must be instantiated by Interceptor)
+2024-12-03 19:46:03 [main] INFO  org.hibernate.orm.connections.access - HHH10001501: Connection obtained from JdbcConnectionAccess [org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess@4346808] for (non-JTA) DDL execution was not in auto-commit mode; the Connection 'local transaction' will be committed and the Connection will be set into auto-commit mode.
+2024-12-03 19:46:03 [main] INFO  org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator - HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2024-12-03 19:46:03 [main] WARN  org.hibernate.engine.jdbc.spi.SqlExceptionHelper - SQL Error: 1264, SQLState: 22001
+2024-12-03 19:46:03 [main] ERROR org.hibernate.engine.jdbc.spi.SqlExceptionHelper - Data truncation: Out of range value for column 'id' at row 1
+2024-12-03 19:46:03 [main] INFO  org.hibernate.engine.jdbc.batch.internal.AbstractBatchImpl - HHH000010: On release of batch it still contained JDBC statements
+2024-12-03 19:46:03 [main] INFO  connector.Main -  log pishet
+2024-12-03 19:46:03 [main] INFO  org.hibernate.orm.connections.pooling - HHH10001008: Cleaning up connection pool [jdbc:mysql://localhost:3306/sergei]
